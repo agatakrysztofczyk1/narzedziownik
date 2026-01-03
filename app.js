@@ -22,7 +22,7 @@ window.addEventListener("offline", () => offlineStatus.textContent = "🔴 offli
 
 // --- Rejestracja Service Workera ---
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js");
+  navigator.serviceWorker.register("/narzedziownik/service-worker.js");
 }
 
 // ==========================
@@ -291,3 +291,4 @@ window.addEventListener("load", async () => {
   }
   renderTools(await getAllTools());
 });
+
