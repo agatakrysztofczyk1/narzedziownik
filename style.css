@@ -1,0 +1,479 @@
+/* ==========================
+   NARZĘDZIOWNIK – style.css
+   ========================== */
+
+/* --- RESET + PODSTAWY --- */
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f4f6f8;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- NAGŁÓWEK --- */
+header {
+  background: #1976d2;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+}
+
+header input {
+  width: 80%;
+  max-width: 600px;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* --- GŁÓWNA ZAWARTOŚĆ --- */
+main {
+  flex: 1;
+  max-width: 1000px;
+  margin: 1.5rem auto;
+  padding: 1rem;
+}
+
+/* --- FORMULARZ --- */
+#formSection {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+}
+
+#formSection h2 {
+  margin-bottom: 1rem;
+  color: #1976d2;
+  text-align: center;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.5rem;
+}
+
+form label {
+  font-weight: 600;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  resize: vertical;
+  background: #fafafa;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #1976d2;
+  background: #fff;
+  box-shadow: 0 0 0 2px rgba(25,118,210,0.1);
+}
+
+/* przyciski formularza */
+.form-buttons {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+button {
+  cursor: pointer;
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #125ba1;
+}
+
+button.hidden {
+  display: none;
+}
+
+/* --- FILTROWANIE --- */
+#filterSection {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#filterSection h3 {
+  margin-bottom: 0.6rem;
+  color: #333;
+}
+
+#hashtagFilter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.hashtag {
+  background: #e3f2fd;
+  color: #1976d2;
+  border-radius: 20px;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: 0.2s;
+}
+
+.hashtag:hover {
+  background: #bbdefb;
+}
+
+.hashtag.active {
+  background: #1976d2;
+  color: white;
+}
+
+/* --- LISTA KAFELKÓW --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  padding: 1rem;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+  color: #1976d2;
+  margin-bottom: 0.2rem;
+}
+
+.card h4 {
+  color: #555;
+  font-style: italic;
+  margin-bottom: 0.4rem;
+}
+
+.card p {
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
+}
+
+.card a {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+.card .tags {
+  margin-top: 0.6rem;
+}
+
+.card .tags span {
+  display: inline-block;
+  background: #f0f0f0;
+  border-radius: 12px;
+  padding: 0.2rem 0.6rem;
+  margin-right: 0.3rem;
+  font-size: 0.85em;
+  color: #333;
+}
+
+/* --- STOPKA --- */
+footer {
+  background: #fafafa;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* --- RESPONSYWNOŚĆ --- */
+@media (max-width: 800px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  header input {
+    width: 95%;
+  }
+}
+
+/* ========================== */
+/* DARK MODE */
+/* ========================== */
+
+body.dark {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+body.dark header {
+  background: #222;
+  color: #fff;
+}
+
+body.dark #formSection,
+body.dark .card {
+  background: #1e1e1e;
+  color: #ddd;
+  box-shadow: 0 2px 6px rgba(255,255,255,0.05);
+}
+
+body.dark input,
+body.dark textarea {
+  background: #2a2a2a;
+  color: #ddd;
+  border: 1px solid #444;
+}
+
+body.dark .hashtag {
+  background-color: #2a2a2a;
+  color: #90caf9;
+}
+body.dark .hashtag.active {
+  background-color: #90caf9;
+  color: #000;
+}
+
+body.dark .card a {
+  color: #90caf9;
+}
+
+body.dark footer {
+  background: #1a1a1a;
+  color: #999;
+}
+
+#themeToggle {
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+#toggleThemeBtn {
+  background: #fff;
+  color: #333;
+  border-radius: 20px;
+  border: none;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+body.dark #toggleThemeBtn {
+  background: #333;
+  color: #eee;
+}
+
+/* ========================== */
+/* DODATKI DO NOWEJ WERSJI APP */
+/* ========================== */
+
+/* --- Ukrywanie formularza --- */
+#formSection {
+  display: none;
+  margin-top: 1rem;
+}
+
+/* --- Przycisk pokazujący formularz --- */
+#toggleFormBtn {
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+#toggleFormBtn:hover {
+  background-color: #125ba1;
+}
+
+/* --- Karty (widok skrócony) --- */
+.card {
+  cursor: pointer;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.card:hover {
+  transform: scale(1.02);
+  background-color: rgba(25, 118, 210, 0.05);
+}
+.card strong {
+  display: block;
+  font-size: 1.05em;
+  margin-top: 0.6em;
+  color: #1976d2;
+}
+.card span {
+  display: block;
+  font-size: 0.95em;
+  line-height: 1.4em;
+}
+
+/* --- Modal (okno szczegółów) --- */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+}
+.modal-content {
+  background: #fff;
+  max-width: 700px;
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  color: #333;
+}
+.modal-content h2 {
+  margin-top: 0;
+  color: #1976d2;
+}
+.modal-content p {
+  white-space: pre-line;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+.modal-content button {
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.modal-content button:hover {
+  background-color: #125ba1;
+}
+
+/* --- Hasztagi w modalu --- */
+.tag {
+  display: inline-block;
+  background-color: #e3f2fd;
+  color: #1976d2;
+  padding: 4px 8px;
+  border-radius: 8px;
+  margin-right: 5px;
+  margin-top: 4px;
+}
+
+/* --- Poprawka: modal mieści się w ekranie i przewija --- */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  overflow: auto; /* fallback dla bardzo długiej treści */
+}
+
+.modal-content {
+  background: #fff;
+  max-width: 700px;
+  margin: 5% auto;
+  padding: 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  color: #333;
+  max-height: 85vh;        /* 🔹 ograniczenie wysokości */
+  overflow-y: auto;        /* 🔹 przewijanie zawartości */
+  scrollbar-width: thin;   /* ładniejszy pasek w Firefox */
+}
+
+/* estetyczne przewijanie */
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.close-modal-btn:hover {
+  color: #000;
+}
+.modal-content {
+  position: relative; /* żeby przycisk X miał kontekst pozycjonowania */
+}
+
+/* --- Tryb ciemny: styl modala --- */
+body.dark .modal-content {
+  background: #1e1e1e;
+  color: #f5f5f5;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+body.dark .close-modal-btn {
+  color: #aaa;
+}
+body.dark .close-modal-btn:hover {
+  color: #fff;
+}
+

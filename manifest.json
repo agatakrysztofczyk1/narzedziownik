@@ -1,0 +1,31 @@
+{
+  "name": "Narzędziownik",
+  "short_name": "Narzędziownik",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#121212",
+  "theme_color": "#1976d2",
+  "description": "Aplikacja offline do przechowywania i przeglądania narzędzi samopomocowych.",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["productivity", "health", "therapy", "offline", "tools"],
+  "lang": "pl",
+  "scope": "./"
+}

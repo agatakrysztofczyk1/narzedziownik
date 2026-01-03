@@ -1,0 +1,10 @@
+Copyright © 2026 Agata Krysztofczyk
+
+Udziela się zgody na uruchamianie aplikacji „Narzędziownik” w przeglądarce internetowej wyłącznie w formie opublikowanej przez autora.
+
+Zabrania się:
+- kopiowania, modyfikowania lub publikowania kodu źródłowego,
+- wykorzystania aplikacji lub jej fragmentów w innych projektach,
+- komercyjnego użycia lub rozpowszechniania w jakiejkolwiek formie.
+
+Aplikacja udostępniona jest wyłącznie do celów osobistych i edukacyjnych.

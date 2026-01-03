@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Narzędziownik</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <script src="https://cdn.jsdelivr.net/npm/dexie@3.2.3/dist/dexie.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Narzędziownik</h1>
+	<div id="themeToggle">
+		<button id="toggleThemeBtn" title="Zmień motyw">🌙 Tryb ciemny</button>
+	</div>
+    <input type="text" id="searchInput" placeholder="🔍 Szukaj narzędzia...">
+  </header>
+
+  <main>
+	<!-- PRZYCISK DO POKAZYWANIA / UKRYWANIA FORMULARZA -->
+	<div class="top-bar">
+	  <button id="toggleFormBtn">➕ Dodaj nowe narzędzie</button>
+	</div>
+
+		<!-- FORMULARZ -->
+		<section id="formSection">
+		  <h2>Dodaj lub edytuj narzędzie</h2>
+		  <form id="toolForm">
+			<input type="hidden" id="toolId">
+
+			<label for="nazwaPL">Nazwa narzędzia (PL):</label>
+			<input type="text" id="nazwaPL" placeholder="np. Medytacja">
+
+			<label for="nazwaEN">Nazwa narzędzia (EN):</label>
+			<input type="text" id="nazwaEN" placeholder="np. Meditation">
+
+			<label for="kategoria">Kategoria:</label>
+			<input type="text" id="kategoria" placeholder="np. Relaks">
+
+			<label for="potrzebne">Co będzie potrzebne do wykonania?</label>
+			<textarea id="potrzebne" rows="2" placeholder="np. Ciche miejsce, mata"></textarea>
+
+			<label for="efekt">Jaki daje efekt?</label>
+			<textarea id="efekt" rows="2" placeholder="np. Redukcja stresu i napięcia"></textarea>
+
+			<label for="czasEfektu">Po jakim czasie można zauważyć efekt?</label>
+			<input type="text" id="czasEfektu" placeholder="np. Po kilku dniach">
+
+			<label for="przeciwskazania">Przeciwskazania:</label>
+			<textarea id="przeciwskazania" rows="2" placeholder="np. Brak dla zdrowych osób"></textarea>
+
+			<label for="instrukcja">Instrukcja:</label>
+			<textarea id="instrukcja" rows="3" placeholder="np. Usiądź wygodnie i skup się na oddechu"></textarea>
+
+			<label for="linkYoutube">Link do instruktażu na YouTube:</label>
+			<input type="url" id="linkYoutube" placeholder="https://youtube.com/...">
+
+			<label for="linkWWW">Link do strony WWW z opisem:</label>
+			<input type="url" id="linkWWW" placeholder="https://example.com/...">
+
+			<label for="hasztagi">Na co pomaga (hasztagi):</label>
+			<input type="text" id="hasztagi" placeholder="#stres #relaks">
+
+			<label for="nurt">W jakim nurcie psychoterapii jest wykorzystywane?</label>
+			<input type="text" id="nurt" placeholder="np. Mindfulness, CBT">
+
+			<div class="form-buttons">
+			  <button type="submit">💾 Zapisz</button>
+			  <button type="button" id="cancelEdit" class="hidden">❌ Anuluj edycję</button>
+			</div>
+		  </form>
+		</section>
+
+    <!-- FILTROWANIE -->
+    <section id="filterSection">
+      <h3>Filtruj po hasztagach:</h3>
+      <div id="hashtagFilter"></div>
+    </section>
+
+    <!-- LISTA NARZĘDZI -->
+    <section id="toolsList" class="grid"></section>
+	<!-- OKNO MODALNE ZE SZCZEGÓŁAMI -->
+	<div id="toolModal" class="modal">
+	  <div id="modalContent" class="modal-content"></div>
+	</div>
+
+  </main>
+
+  <footer>
+    <p>Tryb offline: <span id="offlineStatus">🟢 online</span></p>
+  </footer>
+
+  <script src="db.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
