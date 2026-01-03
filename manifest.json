@@ -1,7 +1,7 @@
 {
   "name": "Narzędziownik",
   "short_name": "Narzędziownik",
-  "start_url": "./index.html",
+  "start_url": "/narzedziownik/index.html",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#121212",
@@ -27,5 +27,6 @@
   ],
   "categories": ["productivity", "health", "therapy", "offline", "tools"],
   "lang": "pl",
-  "scope": "./"
+  "scope": "/narzedziownik/"
 }
+
